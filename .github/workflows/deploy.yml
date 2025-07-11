@@ -1,0 +1,33 @@
+name: Flask App CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  integration:
+    name: Continuous Integration & Deployment
+    runs-on: self-hosted  # 🔁 changed from ubuntu-latest to self-hosted
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Lint code
+        run: echo "Skipping linting for now..."
+
+      - name: Run unit tests
+        run: echo "Skipping unit tests for now..."
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run Flask App
+        run: |
+          nohup python3 app.py &
