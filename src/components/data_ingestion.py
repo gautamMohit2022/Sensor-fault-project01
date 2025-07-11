@@ -56,7 +56,7 @@ class DataIngestion:
         except Exception as e:
             raise CustomException(e,sys)
         
-        def initiate_data_ingestion(self) ->  Path:
+    def initiate_data_ingestion(self) ->  Path:
 
             logging.info("Entered initiated_data_ingestion method of data_integration class ")
 
